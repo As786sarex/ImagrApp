@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchActivity"
+    android:background="@drawable/splash_grad"
+    >
+
+    <ImageView
+        android:id="@+id/searchimgicon"
+        android:layout_width="360dp"
+        android:layout_height="160dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="78dp"
+        android:src="@drawable/splogo" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:id="@+id/justToAlign"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/search_shape"
+        android:elevation="1mm">
+
+        <EditText
+            android:inputType="textAutoComplete"
+            android:layout_width="match_parent"
+            android:id="@+id/search_text"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/search_shape"
+           />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/search_btn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/justToAlign"
+        android:layout_marginTop="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="64dp"
+        android:layout_marginEnd="64dp"
+        android:background="@drawable/search_background"
+        android:text="@string/search"
+        android:textColor="#d7c4c4"
+        android:hapticFeedbackEnabled="true"
+        android:textSize="20sp" />
+
+</RelativeLayout>

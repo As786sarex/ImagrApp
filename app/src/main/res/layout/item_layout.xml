@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginTop="4dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="1.5mm"
+    android:background="@drawable/cardshape">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/rellay"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:layout_alignStart="@+id/item_likes"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="-5dp"
+            android:layout_marginTop="0dp"
+             />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="13dp"
+            android:layout_toEndOf="@id/profile_image"
+            android:text="@string/asif_mondal"
+            android:textColor="#000"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/item_img"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@id/profile_image"
+             />
+
+        <TextView
+            android:id="@+id/item_likes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/item_img"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_if_free_22_463007"
+            android:paddingTop="2dp"
+            android:text="28"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/itemViews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/item_likes"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentTop="false"
+            android:layout_marginStart="19dp"
+            android:layout_toEndOf="@id/item_likes"
+            android:drawableStart="@drawable/ic_if_eye_1954555"
+            android:paddingStart="4dp"
+            android:text="2000"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/itemDownloads"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/item_likes"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentTop="false"
+            android:layout_marginStart="19dp"
+            android:layout_toEndOf="@id/itemViews"
+            android:drawableStart="@drawable/ic_if_download_216183"
+            android:paddingStart="4dp"
+            android:text="2000"
+            android:textColor="#000"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/downloadbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/item_likes"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentTop="false"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="17dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/download_button_shape"
+            android:elevation="1mm"
+            android:src="@drawable/ic_file_download_black_24dp" />
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>
