@@ -1,0 +1,36 @@
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:id="@+id/gr1"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_button"
+            android:title="@string/home" />
+
+        <item
+            android:id="@+id/Search"
+            android:icon="@drawable/ic_searching_magnifying_glass"
+            android:title="@string/search" />
+
+    </group>
+
+    <group
+        android:id="@+id/gr2"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/Important"
+            android:icon="@drawable/ic_important"
+            android:title="@string/important_notice" />
+
+        <item
+            android:id="@+id/aboutUs"
+            android:icon="@drawable/ic_user_outline"
+            android:title="@string/about" />
+    </group>
+</menu>

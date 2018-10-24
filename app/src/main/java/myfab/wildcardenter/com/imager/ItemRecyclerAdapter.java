@@ -1,6 +1,8 @@
 package myfab.wildcardenter.com.imager;
 
+import android.app.DownloadManager;
 import android.content.Context;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,10 +16,8 @@ import com.cooltechworks.views.shimmer.ShimmerRecyclerView;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import es.dmoral.toasty.Toasty;
-
 public class ItemRecyclerAdapter extends ShimmerRecyclerView.Adapter<ItemRecyclerAdapter.itemRecyclerViewHolder> {
     private Context mContext;
     private ArrayList<ItemViewModel> mItemList;
@@ -35,7 +35,7 @@ public class ItemRecyclerAdapter extends ShimmerRecyclerView.Adapter<ItemRecycle
     }
 
     @Override
-    public void onBindViewHolder(@NonNull itemRecyclerViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull itemRecyclerViewHolder holder, final int position) {
         ItemViewModel currentItem=mItemList.get(position);
         String profile_img_url=currentItem.getProfile_img_url();
         String user_name=currentItem.getUser_name();
@@ -43,7 +43,6 @@ public class ItemRecyclerAdapter extends ShimmerRecyclerView.Adapter<ItemRecycle
         int mlike=currentItem.getMlike();
         int mViews=currentItem.getmViews();
         int mDownloads=currentItem.getmDownloads();
-        String large_img_url=currentItem.getLarge_img_url();
         if (profile_img_url.isEmpty()){
             Picasso.with(mContext).load(R.drawable.splogo).centerCrop().fit()
                     .into(holder.profile_img);
@@ -52,7 +51,7 @@ public class ItemRecyclerAdapter extends ShimmerRecyclerView.Adapter<ItemRecycle
                 .into(holder.profile_img);}
         holder.mTextView_user.setText(user_name);
         if (img_url.isEmpty()){
-            Picasso.with(mContext).load(R.drawable.splogo).centerCrop().fit()
+            Picasso.with(mContext).load(R.drawable.splogo)
                     .into(holder.profile_img);
         }else {
             Picasso.with(mContext).load(img_url).centerInside().resize(700, 340)
@@ -65,9 +64,18 @@ public class ItemRecyclerAdapter extends ShimmerRecyclerView.Adapter<ItemRecycle
         holder.download_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toasty.success(mContext,"bhsjkghjh",Toast.LENGTH_SHORT,true).show();
+
+                DownloadManager downloadManager= (DownloadManager) mContext.getSystemService(mContext.DOWNLOAD_SERVICE);
+                DownloadManager.Request request=new DownloadManager.Request(Uri.parse(mItemList.get(position).getLarge_img_url()));
+                request.setTitle(mItemList.get(position).getLarge_img_url()).setDescription("Downloading")
+                        .setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+                        .setDestinationInExternalFilesDir(mContext,"Images","ImageR image");
+                downloadManager.enqueue(request);
+                Toasty.normal(mContext,mItemList.get(position).getUser_name(),Toast.LENGTH_SHORT);
+
             }
         });
+
     }
 
 

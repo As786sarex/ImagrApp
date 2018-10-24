@@ -114,12 +114,10 @@
                         </option>
                         <option name="values">
                           <map>
+                            <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="ecece9" />
-                            <entry key="height" value="40" />
-                            <entry key="outputName" value="ic_file_download_black_24dp" />
-                            <entry key="overrideSize" value="true" />
-                            <entry key="sourceFile" value="C:\Users\asif\Downloads\if_download_1282959.svg" />
-                            <entry key="width" value="40" />
+                            <entry key="outputName" value="ic_searching_magnifying_glass" />
+                            <entry key="sourceFile" value="C:\Users\asif\Downloads\searching-magnifying-glass.svg" />
                           </map>
                         </option>
                       </PersistentState>

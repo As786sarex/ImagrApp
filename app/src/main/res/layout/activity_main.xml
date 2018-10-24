@@ -1,17 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:App="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-   <com.cooltechworks.views.shimmer.ShimmerRecyclerView
-       android:id="@+id/RecyclerView"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"
-       app:shimmer_demo_layout_manager_type="linear_vertical"
-       app:shimmer_demo_angle="15"
-       app:shimmer_demo_reverse_animation="false"
-       />
+    android:fitsSystemWindows="true"
+    android:background="@color/demo_light_transparent">
 
-</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <com.cooltechworks.views.shimmer.ShimmerRecyclerView
+            android:id="@+id/RecyclerView"
+            android:layout_below="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            App:shimmer_demo_angle="15"
+            App:shimmer_demo_layout_manager_type="linear_vertical"
+            App:shimmer_demo_reverse_animation="false">
+
+        </com.cooltechworks.views.shimmer.ShimmerRecyclerView>
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    </RelativeLayout>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        App:headerLayout="@layout/header"
+        App:menu="@menu/drawer_menu" />
+
+</android.support.v4.widget.DrawerLayout>
