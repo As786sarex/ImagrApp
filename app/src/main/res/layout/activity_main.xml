@@ -21,7 +21,6 @@
             App:shimmer_demo_angle="15"
             App:shimmer_demo_layout_manager_type="linear_vertical"
             App:shimmer_demo_reverse_animation="false">
-
         </com.cooltechworks.views.shimmer.ShimmerRecyclerView>
 
         <android.support.v7.widget.Toolbar

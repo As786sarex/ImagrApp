@@ -28,9 +28,5 @@
             android:icon="@drawable/ic_important"
             android:title="@string/important_notice" />
 
-        <item
-            android:id="@+id/aboutUs"
-            android:icon="@drawable/ic_user_outline"
-            android:title="@string/about" />
     </group>
 </menu>
